@@ -1,0 +1,1470 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20231.23.0310.1044                               -->
+<workbook original-version='18.1' source-build='2023.1.0 (20231.23.0310.1044)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <SavingAnalyticObjects />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='part-r-00000' inline='true' name='federated.1uun4md0z73gvk12gxnew05keh9s' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='part-r-00000' name='textscan.1vybj0q10imb3l19fj5jy0k0sf5p'>
+            <connection class='textscan' directory='C:/Users/Elizabeth Aladejare/Desktop/HPCI/Coursework' filename='part-r-00000.txt' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1vybj0q10imb3l19fj5jy0k0sf5p' name='part-r-00000.txt' table='[part-r-00000#txt]' type='table'>
+          <columns character-set='UTF-8' header='no' locale='en_GB' separator='&#9;'>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='integer' name='F2' ordinal='1' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.1vybj0q10imb3l19fj5jy0k0sf5p' name='part-r-00000.txt' table='[part-r-00000#txt]' type='table'>
+          <columns character-set='UTF-8' header='no' locale='en_GB' separator='&#9;'>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='integer' name='F2' ordinal='1' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[part-r-00000.txt]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;£&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;\\t&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;false&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[part-r-00000.txt]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[part-r-00000.txt_974CF5A54D314B46A186344C7A7EBEB5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F2</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F2]</local-name>
+            <parent-name>[part-r-00000.txt]</parent-name>
+            <remote-alias>F2</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[part-r-00000.txt_974CF5A54D314B46A186344C7A7EBEB5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Taxi Travel Distance' datatype='integer' name='[F1]' role='measure' type='quantitative' />
+      <column caption='Taxi Location Number' datatype='integer' name='[F2]' role='measure' type='quantitative' />
+      <column datatype='string' name='[Taxi Travel Distance &amp; Taxi Location Number (clusters) (1)]' parent-model='[AnalyticModel:{cf89425a-8354-44ba-b390-425d9bb90190}]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[Taxi Travel Distance &amp; Taxi Location Number 1]' default='&quot;Not Clustered&quot;' new-bin='true'>
+          <bin default-name='false' value='&quot;Cluster 1&quot;'>
+            <value>(-3,13)</value>
+            <value>(-2,22)</value>
+            <value>(-1,46)</value>
+            <value>(0,17)</value>
+            <value>(1,17)</value>
+          </bin>
+          <bin default-name='false' value='&quot;Cluster 2&quot;'>
+            <value>(-29,1)</value>
+            <value>(-19,1)</value>
+            <value>(-18,1)</value>
+            <value>(-17,1)</value>
+            <value>(-13,1)</value>
+            <value>(-10,4)</value>
+            <value>(-9,1)</value>
+            <value>(-8,1)</value>
+            <value>(-7,6)</value>
+            <value>(-6,5)</value>
+            <value>(-5,5)</value>
+            <value>(-4,9)</value>
+            <value>(2,8)</value>
+            <value>(3,5)</value>
+            <value>(4,1)</value>
+            <value>(5,2)</value>
+            <value>(9,2)</value>
+            <value>(12,1)</value>
+            <value>(13,1)</value>
+            <value>(16,1)</value>
+            <value>(17,1)</value>
+            <value>(19,2)</value>
+            <value>(20,1)</value>
+            <value>(26,1)</value>
+            <value>(42,1)</value>
+            <value>(51,1)</value>
+            <value>(100,1)</value>
+          </bin>
+        </calculation>
+      </column>
+      <column datatype='string' name='[Taxi Travel Distance &amp; Taxi Location Number (clusters)]' parent-model='[AnalyticModel:{2afce16f-5d72-4c4f-b2b4-ce6682d36785}]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[Taxi Travel Distance &amp; Taxi Location Number]' default='&quot;Not Clustered&quot;' new-bin='true'>
+          <bin default-name='false' value='&quot;Cluster 1&quot;'>
+            <value>(-3,13)</value>
+            <value>(-2,22)</value>
+            <value>(-1,46)</value>
+            <value>(0,17)</value>
+            <value>(1,17)</value>
+          </bin>
+          <bin default-name='false' value='&quot;Cluster 2&quot;'>
+            <value>(-29,1)</value>
+            <value>(-19,1)</value>
+            <value>(-18,1)</value>
+            <value>(-17,1)</value>
+            <value>(-13,1)</value>
+            <value>(-10,4)</value>
+            <value>(-9,1)</value>
+            <value>(-8,1)</value>
+            <value>(-7,6)</value>
+            <value>(-6,5)</value>
+            <value>(-5,5)</value>
+            <value>(-4,9)</value>
+            <value>(2,8)</value>
+            <value>(3,5)</value>
+            <value>(4,1)</value>
+            <value>(5,2)</value>
+            <value>(9,2)</value>
+            <value>(12,1)</value>
+            <value>(13,1)</value>
+            <value>(16,1)</value>
+            <value>(17,1)</value>
+            <value>(19,2)</value>
+            <value>(20,1)</value>
+            <value>(26,1)</value>
+            <value>(42,1)</value>
+            <value>(51,1)</value>
+            <value>(100,1)</value>
+          </bin>
+        </calculation>
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='part-r-00000.txt' datatype='table' name='[__tableau_internal_object_id__].[part-r-00000.txt_974CF5A54D314B46A186344C7A7EBEB5]' role='measure' type='quantitative' />
+      <column-instance column='[F1]' derivation='Sum' name='[sum:F1:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[F2]' derivation='Sum' name='[sum:F2:qk]' pivot='key' type='quantitative' />
+      <group auto-hidden='true' hidden='true' name='[Taxi Travel Distance &amp; Taxi Location Number 1]' name-style='unqualified'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[F1]' />
+          <groupfilter function='level-members' level='[F2]' />
+        </groupfilter>
+      </group>
+      <group auto-hidden='true' hidden='true' name='[Taxi Travel Distance &amp; Taxi Location Number]' name-style='unqualified'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[F1]' />
+          <groupfilter function='level-members' level='[F2]' />
+        </groupfilter>
+      </group>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:AdhocCluster:1:ok]' type='palette'>
+            <map to='#59a14f'>
+              <bucket>1</bucket>
+            </map>
+            <map to='#a250ff'>
+              <bucket>2</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <default-sorts>
+        <manual-sort column='[Taxi Travel Distance &amp; Taxi Location Number (clusters) (1)]' direction='ASC'>
+          <dictionary>
+            <bucket>&quot;Cluster 1&quot;</bucket>
+            <bucket>&quot;Cluster 2&quot;</bucket>
+            <bucket>&quot;Not Clustered&quot;</bucket>
+          </dictionary>
+        </manual-sort>
+        <manual-sort column='[Taxi Travel Distance &amp; Taxi Location Number (clusters)]' direction='ASC'>
+          <dictionary>
+            <bucket>&quot;Cluster 1&quot;</bucket>
+            <bucket>&quot;Cluster 2&quot;</bucket>
+            <bucket>&quot;Not Clustered&quot;</bucket>
+          </dictionary>
+        </manual-sort>
+      </default-sorts>
+      <analytic-model>
+        <name>
+          <field name='[AnalyticModel:{2afce16f-5d72-4c4f-b2b4-ce6682d36785}]' />
+        </name>
+        <analytic-model-specifications class='cluster-specifications'>
+          <analysis-fields>
+            <field name='[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]' />
+            <field name='[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]' />
+          </analysis-fields>
+          <filter-fields />
+          <lod-fields />
+          <number-of-desired-clusters>0</number-of-desired-clusters>
+          <is-dissagregate>true</is-dissagregate>
+        </analytic-model-specifications>
+        <result-fields />
+      </analytic-model>
+      <analytic-model>
+        <name>
+          <field name='[AnalyticModel:{33b1decb-53e5-41df-aeeb-0292a814a904}]' />
+        </name>
+        <analytic-model-specifications class='cluster-specifications'>
+          <analysis-fields>
+            <field name='[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]' />
+            <field name='[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]' />
+          </analysis-fields>
+          <filter-fields />
+          <lod-fields />
+          <number-of-desired-clusters>0</number-of-desired-clusters>
+          <is-dissagregate>false</is-dissagregate>
+        </analytic-model-specifications>
+        <result-fields />
+      </analytic-model>
+      <analytic-model>
+        <name>
+          <field name='[AnalyticModel:{8fbd0d2e-1bcc-49e1-8b0f-bd56c7cafe68}]' />
+        </name>
+        <analytic-model-specifications class='cluster-specifications'>
+          <analysis-fields>
+            <field name='[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]' />
+            <field name='[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]' />
+          </analysis-fields>
+          <filter-fields />
+          <lod-fields />
+          <number-of-desired-clusters>0</number-of-desired-clusters>
+          <is-dissagregate>false</is-dissagregate>
+        </analytic-model-specifications>
+        <result-fields />
+      </analytic-model>
+      <analytic-model>
+        <name>
+          <field name='[AnalyticModel:{cf89425a-8354-44ba-b390-425d9bb90190}]' />
+        </name>
+        <analytic-model-specifications class='cluster-specifications'>
+          <analysis-fields>
+            <field name='[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]' />
+            <field name='[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]' />
+          </analysis-fields>
+          <filter-fields />
+          <lod-fields />
+          <number-of-desired-clusters>0</number-of-desired-clusters>
+          <is-dissagregate>true</is-dissagregate>
+        </analytic-model-specifications>
+        <result-fields />
+      </analytic-model>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='part-r-00000.txt' id='part-r-00000.txt_974CF5A54D314B46A186344C7A7EBEB5'>
+            <properties context=''>
+              <relation connection='textscan.1vybj0q10imb3l19fj5jy0k0sf5p' name='part-r-00000.txt' table='[part-r-00000#txt]' type='table'>
+                <columns character-set='UTF-8' header='no' locale='en_GB' separator='&#9;'>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='integer' name='F2' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Green Taxi Results (Graph with Cluster Analysis)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='part-r-00000' name='federated.1uun4md0z73gvk12gxnew05keh9s' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1uun4md0z73gvk12gxnew05keh9s'>
+            <column auto-hidden='true' caption='Clusters' datatype='integer' hidden='true' is-adhoc-cluster='true' name='[AdhocCluster:1]' parent-model='[AnalyticModel:{33b1decb-53e5-41df-aeeb-0292a814a904}]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='-1' value='Cluster Outliers' />
+                <alias key='0' value='Not Clustered' />
+                <alias key='1' value='Cluster 1' />
+                <alias key='2' value='Cluster 2' />
+                <alias key='3' value='Cluster 3' />
+                <alias key='4' value='Cluster 4' />
+                <alias key='5' value='Cluster 5' />
+                <alias key='6' value='Cluster 6' />
+                <alias key='7' value='Cluster 7' />
+                <alias key='8' value='Cluster 8' />
+                <alias key='9' value='Cluster 9' />
+                <alias key='10' value='Cluster 10' />
+                <alias key='11' value='Cluster 11' />
+                <alias key='12' value='Cluster 12' />
+                <alias key='13' value='Cluster 13' />
+                <alias key='14' value='Cluster 14' />
+                <alias key='15' value='Cluster 15' />
+                <alias key='16' value='Cluster 16' />
+                <alias key='17' value='Cluster 17' />
+                <alias key='18' value='Cluster 18' />
+                <alias key='19' value='Cluster 19' />
+                <alias key='20' value='Cluster 20' />
+                <alias key='21' value='Cluster 21' />
+                <alias key='22' value='Cluster 22' />
+                <alias key='23' value='Cluster 23' />
+                <alias key='24' value='Cluster 24' />
+                <alias key='25' value='Cluster 25' />
+                <alias key='26' value='Cluster 26' />
+                <alias key='27' value='Cluster 27' />
+                <alias key='28' value='Cluster 28' />
+                <alias key='29' value='Cluster 29' />
+                <alias key='30' value='Cluster 30' />
+                <alias key='31' value='Cluster 31' />
+                <alias key='32' value='Cluster 32' />
+                <alias key='33' value='Cluster 33' />
+                <alias key='34' value='Cluster 34' />
+                <alias key='35' value='Cluster 35' />
+                <alias key='36' value='Cluster 36' />
+                <alias key='37' value='Cluster 37' />
+                <alias key='38' value='Cluster 38' />
+                <alias key='39' value='Cluster 39' />
+                <alias key='40' value='Cluster 40' />
+                <alias key='41' value='Cluster 41' />
+                <alias key='42' value='Cluster 42' />
+                <alias key='43' value='Cluster 43' />
+                <alias key='44' value='Cluster 44' />
+                <alias key='45' value='Cluster 45' />
+                <alias key='46' value='Cluster 46' />
+                <alias key='47' value='Cluster 47' />
+                <alias key='48' value='Cluster 48' />
+                <alias key='49' value='Cluster 49' />
+                <alias key='50' value='Cluster 50' />
+              </aliases>
+            </column>
+            <column caption='Taxi Travel Distance' datatype='integer' name='[F1]' role='measure' type='quantitative' />
+            <column caption='Taxi Location Number' datatype='integer' name='[F2]' role='measure' type='quantitative' />
+            <column-instance column='[AdhocCluster:1]' derivation='None' is-adhoc-cluster='true' name='[none:AdhocCluster:1:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[F1]' derivation='Sum' name='[sum:F1:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[F2]' derivation='Sum' name='[sum:F2:qk]' pivot='key' type='quantitative' />
+            <style>
+              <style-rule element='mark'>
+                <encoding attr='color' field='[none:AdhocCluster:1:ok]' type='palette'>
+                  <map to='#59a14f'>
+                    <bucket>1</bucket>
+                  </map>
+                  <map to='#a250ff'>
+                    <bucket>2</bucket>
+                  </map>
+                </encoding>
+              </style-rule>
+            </style>
+          </datasource-dependencies>
+          <aggregation value='false' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:1:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#59a14f' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</rows>
+        <cols>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</cols>
+        <mark-labels>
+          <mark-label id='0' label-state='off'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                  <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                  <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:1:ok]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>2</value>
+                <value>8</value>
+                <value>2</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+        </mark-labels>
+        <annotations>
+          <annotation class='point' id='8' mark-position='1' pullback='12' text-width='180'>
+            <formatted-text>
+              <run fontcolor='#787878'>Clusters: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:1:ok]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Taxi Travel Distance: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Taxi Location Number: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]>]]></run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='mark'>
+                <tuple-reference>
+                  <tuple-descriptor>
+                    <pane-descriptor>
+                      <x-fields>
+                        <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                      </x-fields>
+                      <y-fields>
+                        <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                      </y-fields>
+                    </pane-descriptor>
+                    <columns>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:1:ok]</field>
+                    </columns>
+                  </tuple-descriptor>
+                  <tuple>
+                    <value>100</value>
+                    <value>1</value>
+                    <value>2</value>
+                  </tuple>
+                </tuple-reference>
+              </visual-coordinate>
+            </point>
+            <body x='130' y='-20' />
+          </annotation>
+          <annotation class='point' id='9' mark-position='1' pullback='12' text-width='180'>
+            <formatted-text>
+              <run fontcolor='#787878'>Clusters: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:1:ok]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Taxi Travel Distance: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Taxi Location Number: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]>]]></run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='mark'>
+                <tuple-reference>
+                  <tuple-descriptor>
+                    <pane-descriptor>
+                      <x-fields>
+                        <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                      </x-fields>
+                      <y-fields>
+                        <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                      </y-fields>
+                    </pane-descriptor>
+                    <columns>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:1:ok]</field>
+                    </columns>
+                  </tuple-descriptor>
+                  <tuple>
+                    <value>-1</value>
+                    <value>46</value>
+                    <value>1</value>
+                  </tuple>
+                </tuple-reference>
+              </visual-coordinate>
+            </point>
+            <body x='-108' y='-200' />
+          </annotation>
+          <annotation class='point' id='11' mark-position='1' pullback='12' text-width='180'>
+            <formatted-text>
+              <run fontcolor='#787878'>Clusters: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:1:ok]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Taxi Travel Distance: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Taxi Location Number: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]>]]></run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='mark'>
+                <tuple-reference>
+                  <tuple-descriptor>
+                    <pane-descriptor>
+                      <x-fields>
+                        <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                      </x-fields>
+                      <y-fields>
+                        <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                      </y-fields>
+                    </pane-descriptor>
+                    <columns>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:1:ok]</field>
+                    </columns>
+                  </tuple-descriptor>
+                  <tuple>
+                    <value>-29</value>
+                    <value>1</value>
+                    <value>2</value>
+                  </tuple>
+                </tuple-reference>
+              </visual-coordinate>
+            </point>
+            <body x='241' y='-23' />
+          </annotation>
+          <annotation class='point' id='12' mark-position='1' pullback='12' text-width='180'>
+            <formatted-text>
+              <run fontcolor='#787878'>Clusters: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:1:ok]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Taxi Travel Distance: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Taxi Location Number: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]>]]></run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='mark'>
+                <tuple-reference>
+                  <tuple-descriptor>
+                    <pane-descriptor>
+                      <x-fields>
+                        <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                      </x-fields>
+                      <y-fields>
+                        <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                      </y-fields>
+                    </pane-descriptor>
+                    <columns>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:1:ok]</field>
+                    </columns>
+                  </tuple-descriptor>
+                  <tuple>
+                    <value>26</value>
+                    <value>1</value>
+                    <value>2</value>
+                  </tuple>
+                </tuple-reference>
+              </visual-coordinate>
+            </point>
+            <body x='174' y='-85' />
+          </annotation>
+          <annotation class='point' id='13' mark-position='1' pullback='12' text-width='180'>
+            <formatted-text>
+              <run fontcolor='#787878'>Clusters: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:1:ok]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Taxi Travel Distance: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Taxi Location Number: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]>]]></run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='mark'>
+                <tuple-reference>
+                  <tuple-descriptor>
+                    <pane-descriptor>
+                      <x-fields>
+                        <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                      </x-fields>
+                      <y-fields>
+                        <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                      </y-fields>
+                    </pane-descriptor>
+                    <columns>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:1:ok]</field>
+                    </columns>
+                  </tuple-descriptor>
+                  <tuple>
+                    <value>-9</value>
+                    <value>1</value>
+                    <value>2</value>
+                  </tuple>
+                </tuple-reference>
+              </visual-coordinate>
+            </point>
+            <body x='219' y='-136' />
+          </annotation>
+        </annotations>
+      </table>
+      <simple-id uuid='{BF0F7A65-18F0-44E7-A32C-6FC486C5DF09}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Highest Taxi travel distance</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='part-r-00000' name='federated.1uun4md0z73gvk12gxnew05keh9s' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1uun4md0z73gvk12gxnew05keh9s'>
+            <column auto-hidden='true' caption='Clusters (2)' datatype='integer' hidden='true' is-adhoc-cluster='true' name='[AdhocCluster:3]' parent-model='[AnalyticModel:{8fbd0d2e-1bcc-49e1-8b0f-bd56c7cafe68}]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='-1' value='Cluster Outliers' />
+                <alias key='0' value='Not Clustered' />
+                <alias key='1' value='Cluster 1' />
+                <alias key='2' value='Cluster 2' />
+                <alias key='3' value='Cluster 3' />
+                <alias key='4' value='Cluster 4' />
+                <alias key='5' value='Cluster 5' />
+                <alias key='6' value='Cluster 6' />
+                <alias key='7' value='Cluster 7' />
+                <alias key='8' value='Cluster 8' />
+                <alias key='9' value='Cluster 9' />
+                <alias key='10' value='Cluster 10' />
+                <alias key='11' value='Cluster 11' />
+                <alias key='12' value='Cluster 12' />
+                <alias key='13' value='Cluster 13' />
+                <alias key='14' value='Cluster 14' />
+                <alias key='15' value='Cluster 15' />
+                <alias key='16' value='Cluster 16' />
+                <alias key='17' value='Cluster 17' />
+                <alias key='18' value='Cluster 18' />
+                <alias key='19' value='Cluster 19' />
+                <alias key='20' value='Cluster 20' />
+                <alias key='21' value='Cluster 21' />
+                <alias key='22' value='Cluster 22' />
+                <alias key='23' value='Cluster 23' />
+                <alias key='24' value='Cluster 24' />
+                <alias key='25' value='Cluster 25' />
+                <alias key='26' value='Cluster 26' />
+                <alias key='27' value='Cluster 27' />
+                <alias key='28' value='Cluster 28' />
+                <alias key='29' value='Cluster 29' />
+                <alias key='30' value='Cluster 30' />
+                <alias key='31' value='Cluster 31' />
+                <alias key='32' value='Cluster 32' />
+                <alias key='33' value='Cluster 33' />
+                <alias key='34' value='Cluster 34' />
+                <alias key='35' value='Cluster 35' />
+                <alias key='36' value='Cluster 36' />
+                <alias key='37' value='Cluster 37' />
+                <alias key='38' value='Cluster 38' />
+                <alias key='39' value='Cluster 39' />
+                <alias key='40' value='Cluster 40' />
+                <alias key='41' value='Cluster 41' />
+                <alias key='42' value='Cluster 42' />
+                <alias key='43' value='Cluster 43' />
+                <alias key='44' value='Cluster 44' />
+                <alias key='45' value='Cluster 45' />
+                <alias key='46' value='Cluster 46' />
+                <alias key='47' value='Cluster 47' />
+                <alias key='48' value='Cluster 48' />
+                <alias key='49' value='Cluster 49' />
+                <alias key='50' value='Cluster 50' />
+              </aliases>
+            </column>
+            <column caption='Taxi Travel Distance' datatype='integer' name='[F1]' role='measure' type='quantitative' />
+            <column caption='Taxi Location Number' datatype='integer' name='[F2]' role='measure' type='quantitative' />
+            <column-instance column='[AdhocCluster:3]' derivation='None' is-adhoc-cluster='true' name='[none:AdhocCluster:3:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[F1]' derivation='Sum' name='[sum:F1:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[F2]' derivation='Sum' name='[sum:F2:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='false' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]' num-steps='100' palette='purple_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='omit-on-special' field='[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]' value='false' />
+            <format attr='break-on-special' field='[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]' value='false' />
+            <format attr='show-null-value-warning' field='[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]' />
+              <size column='[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]' />
+              <text column='[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-transparency' value='255' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+        <annotations>
+          <annotation class='point' id='8' mark-position='1' pullback='12' text-width='180'>
+            <formatted-text>
+              <run fontcolor='#787878'>Clusters: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:3:ok]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Taxi Travel Distance: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Taxi Location Number: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]>]]></run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='mark'>
+                <tuple-reference>
+                  <tuple-descriptor>
+                    <pane-descriptor>
+                      <x-fields>
+                        <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                      </x-fields>
+                      <y-fields>
+                        <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                      </y-fields>
+                    </pane-descriptor>
+                    <columns>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:3:ok]</field>
+                    </columns>
+                  </tuple-descriptor>
+                  <tuple>
+                    <value>100</value>
+                    <value>1</value>
+                    <value>2</value>
+                  </tuple>
+                </tuple-reference>
+              </visual-coordinate>
+            </point>
+            <body x='130' y='-20' />
+          </annotation>
+          <annotation class='point' id='9' mark-position='1' pullback='12' text-width='180'>
+            <formatted-text>
+              <run fontcolor='#787878'>Clusters: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:3:ok]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Taxi Travel Distance: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Taxi Location Number: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]>]]></run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='mark'>
+                <tuple-reference>
+                  <tuple-descriptor>
+                    <pane-descriptor>
+                      <x-fields>
+                        <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                      </x-fields>
+                      <y-fields>
+                        <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                      </y-fields>
+                    </pane-descriptor>
+                    <columns>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:3:ok]</field>
+                    </columns>
+                  </tuple-descriptor>
+                  <tuple>
+                    <value>-1</value>
+                    <value>46</value>
+                    <value>1</value>
+                  </tuple>
+                </tuple-reference>
+              </visual-coordinate>
+            </point>
+            <body x='-108' y='-200' />
+          </annotation>
+          <annotation class='point' id='11' mark-position='1' pullback='12' text-width='180'>
+            <formatted-text>
+              <run fontcolor='#787878'>Clusters: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:3:ok]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Taxi Travel Distance: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Taxi Location Number: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]>]]></run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='mark'>
+                <tuple-reference>
+                  <tuple-descriptor>
+                    <pane-descriptor>
+                      <x-fields>
+                        <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                      </x-fields>
+                      <y-fields>
+                        <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                      </y-fields>
+                    </pane-descriptor>
+                    <columns>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:3:ok]</field>
+                    </columns>
+                  </tuple-descriptor>
+                  <tuple>
+                    <value>-29</value>
+                    <value>1</value>
+                    <value>2</value>
+                  </tuple>
+                </tuple-reference>
+              </visual-coordinate>
+            </point>
+            <body x='241' y='-23' />
+          </annotation>
+          <annotation class='point' id='12' mark-position='1' pullback='12' text-width='180'>
+            <formatted-text>
+              <run fontcolor='#787878'>Clusters: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:3:ok]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Taxi Travel Distance: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Taxi Location Number: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]>]]></run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='mark'>
+                <tuple-reference>
+                  <tuple-descriptor>
+                    <pane-descriptor>
+                      <x-fields>
+                        <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                      </x-fields>
+                      <y-fields>
+                        <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                      </y-fields>
+                    </pane-descriptor>
+                    <columns>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:3:ok]</field>
+                    </columns>
+                  </tuple-descriptor>
+                  <tuple>
+                    <value>26</value>
+                    <value>1</value>
+                    <value>2</value>
+                  </tuple>
+                </tuple-reference>
+              </visual-coordinate>
+            </point>
+            <body x='174' y='-85' />
+          </annotation>
+          <annotation class='point' id='13' mark-position='1' pullback='12' text-width='180'>
+            <formatted-text>
+              <run fontcolor='#787878'>Clusters: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:3:ok]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Taxi Travel Distance: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Taxi Location Number: </run>
+              <run bold='true'><![CDATA[<[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]>]]></run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='mark'>
+                <tuple-reference>
+                  <tuple-descriptor>
+                    <pane-descriptor>
+                      <x-fields>
+                        <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                      </x-fields>
+                      <y-fields>
+                        <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                      </y-fields>
+                    </pane-descriptor>
+                    <columns>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F1:qk]</field>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+                      <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:3:ok]</field>
+                    </columns>
+                  </tuple-descriptor>
+                  <tuple>
+                    <value>-9</value>
+                    <value>1</value>
+                    <value>2</value>
+                  </tuple>
+                </tuple-reference>
+              </visual-coordinate>
+            </point>
+            <body x='219' y='-136' />
+          </annotation>
+        </annotations>
+      </table>
+      <simple-id uuid='{8C3E8A12-CB48-47AD-BAA3-E7E2927557BF}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:1:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:1:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{1F4DD334-6667-40DF-94F4-9A1412A5A1E7}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[Taxi Travel Distance &amp; Taxi Location Number (clusters) (1)]</field>
+            <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[none:AdhocCluster:1:ok]</field>
+            <field>[federated.1uun4md0z73gvk12gxnew05keh9s].[sum:F2:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{7030C90E-59F6-4BF0-9BB1-E97020C6C664}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='240' name='Sheet 1' width='240'>
+      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
+      jXDpsUXSAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='240' name='Sheet 2' width='240'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>

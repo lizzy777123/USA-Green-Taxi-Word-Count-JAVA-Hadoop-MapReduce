@@ -1,0 +1,22 @@
+/Reducer 2
+
+/*Import java packages*/
+package org.myorg;
+import java.io.IOException;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Reducer;
+
+/*Define public class and call it "FrequencyCal"*/
+public class FrequencyCal extends Reducer<Text, Text, Text, Text>{
+
+	public void reduce(Text key, Iterable<Text> values, Context context)
+			throws IOException, InterruptedException  { 
+		int count = 0; // count frequency of 1 unique for each net degrees (Pickup - Dropoff distance)
+            
+            // Adds sum of 1 for each additional occurence count for key value pairs e.g. 100, 1 + 100 + 5 = 100, 6 (Location ID, Diff)
+		for (Text value : values){
+			count += 1;
+		}
+		context.write(key, new Text(Integer.toString (count)));
+	}
+}

@@ -1,0 +1,33 @@
+/Mapper 1
+
+/*Import java packages*/
+package org.myorg;
+import java.io.IOException;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;
+
+/*Define public class and call it "LocationMapper"*/
+public class LocationMapper 
+      extends Mapper<Object, Text, Text, Text>{ //Sets output to be texts (string)
+
+    public void map(Object key, Text value, Context context)
+            throws IOException, InterruptedException  { 
+       String[] valueStr = value.toString().split("\t"); // Splits up each row / column into string to add with mapping below.
+
+         if (valueStr.length == 4) {
+             try 
+              {
+        String pickUp = valueStr[5]; // Take pickup ID which is in column 5, 6th column in the excel data file.
+        String dropOff = valueStr[6]; // Take pickup ID which is in column 5, 6th column in the excel data file.
+
+        String inDegree ="1"; // positive if in pickup ID
+        String outDegree ="-1"; // negative if in dropoff ID
+        context.write(new Text(pickUp), new Text(inDegree)); //map pickup ID and 1s
+        context.write(new Text(dropOff), new Text(outDegree)); //map drop off ID and -1s
+        }
+catch(Exception e)
+{
+    }
+}
+}
+}

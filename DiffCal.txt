@@ -1,0 +1,23 @@
+/Reducer 1
+
+/*Import java packages*/
+package org.myorg;
+import java.io.IOException;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Reducer;
+
+/*Define public class and call it "DiffCal"*/
+public class DiffCal extends Reducer<Text, Text, Text, Text>{
+
+	public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException  { 
+            // Gets net difference of trael
+		int diff = 0; // net difference degree
+
+		for (Text value : values){
+
+            // Gets net difference and match up with Location ID. Key value pairs to be Location ID, Diff e.g. 100, 1 ... 46, 1 ... etc. 
+			diff += Integer.parseInt(value.toString());
+		}
+		context.write(new Text(key), new Text(Integer.toString (diff)));
+	}
+}

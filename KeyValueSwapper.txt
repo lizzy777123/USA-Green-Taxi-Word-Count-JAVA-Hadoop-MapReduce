@@ -1,0 +1,19 @@
+/Mapper 2
+
+/*Import java packages*/
+package org.myorg;
+import java.io.IOException;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;
+
+/*Define public class and call it "KeyValueSwapper"*/
+public class KeyValueSwapper extends Mapper<Object, Text, Text, Text>{
+
+	public void map(Object key, Text value, Context context)
+			throws IOException, InterruptedException  { 
+		String[] kv = value.toString().split("\t"); //Splits string into seperate word i.e. key value tuple is split
+		String node = kv[0]; // location IDs
+		String deg = kv[1]; // net degrees
+		context.write(new Text(deg), new Text(node)); //swap keys and values around from Reducer 1 output. And rearranges key value pairs to now be Locaton ID, Diff e.g. 6, 100
+	}
+}

@@ -1,0 +1,66 @@
+
+/Main Class
+
+/*Import java packages*/
+package org.myorg;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+
+
+/*Define public class and call it "Q4a"*/
+public class Q4a
+{
+
+
+	public static void main(String[] args) throws Exception 
+	{
+
+		/*MapReduce job 1*/
+            
+            /*To allow chaining to work as planned need to have 2 seperate configurations. This one is for MapReducejob1*/
+		Configuration conf = new Configuration(); 
+		Job job1 = Job.getInstance (conf, "degree"); //Configuration 1 for job 1 
+
+            /*Sets Q4a as main class, with KeyValueSwapper as Map job 1 and FrequencyCal as Reducer job 1"*/
+		job1.setJarByClass(Q4a.class);
+		job1.setMapperClass(LocationMapper.class);
+		job1.setReducerClass(DiffCal.class);
+
+            /*Sets ouput of key values to be text class*/
+		job1.setOutputKeyClass(Text.class);
+		job1.setOutputValueClass(Text.class);
+
+
+            /*Creates output file from Reducer 1 and makes it input for Mapper 2"*/
+		FileInputFormat.addInputPath(job1, new Path (args[1]));
+		FileOutputFormat.setOutputPath(job1, new Path (args[1]+"/tmp"));//Output of job 1
+		job1.waitForCompletion(true); //Wait for job 1 to finish executing before job 2 can be executed
+
+
+
+		/*MapReduce job 2*/
+
+            /*To allow chaining to work as planned need to have 2 seperate configurations. This one is for MapReducejob2*/
+		Configuration conf2 = new Configuration();
+		Job job2 = Job.getInstance (conf2, "frequency"); //Configuration 2 for job 2
+
+            /*Sets Q4a as main class, with KeyValueSwapper as Map job 2 and FrequencyCal as Reducer job 2"*/
+		job2.setJarByClass(Q4a.class);
+		job2.setMapperClass(KeyValueSwapper.class);
+		job2.setReducerClass(FrequencyCal.class);
+
+            /*Sets ouput of key values to be text class*/
+		job2.setOutputKeyClass(Text.class);
+		job2.setOutputValueClass(Text.class);
+
+            /*Uses output file from Reducer 1 and makes it input for Mapper 2"*/
+		FileInputFormat.addInputPath(job2, new Path (args[1]+"/tmp")); // output of job 1 becomes input for job 2
+		FileOutputFormat.setOutputPath(job2, new Path (args[2]));
+		System.exit(job2.waitForCompletion(true) ? 0 : 1); // Creates output from above code in a seperate file. 
+
+	}
+}
